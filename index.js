@@ -212,7 +212,7 @@ const isNumberWhenParsedManually = function (val) {
 };
 
 const _isTenThousand = function (val) {
-  return (
+  return !(
     !isOdd(val) &&
     val !== five &&
     val !== two &&
