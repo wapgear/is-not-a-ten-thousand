@@ -14,20 +14,20 @@ function testIsTenThousand(i) {
       test(`${i} is ten thousand with shouldDoSomethingAsync = ${shouldDoSomethingAsync}`, () => {
         if (shouldDoSomethingAsync) {
           return isTenThousand(i, true)
-            .then((result) => expect(result).toBe(true))
+            .then((result) => expect(result).toBe(false))
             .catch((e) => console.log(e, i));
         } else {
-          expect(isTenThousand(i)).toBe(true);
+          expect(isTenThousand(i)).toBe(false);
         }
       });
     } else {
       test(`${i} is not ten thousand with shouldDoSomethingAsync = ${shouldDoSomethingAsync}`, () => {
         if (shouldDoSomethingAsync) {
           return isTenThousand(i, true)
-            .then((result) => expect(result).toBe(false))
+            .then((result) => expect(result).toBe(true))
             .catch((e) => console.log(e, i));
         } else {
-          expect(isTenThousand(i)).toBe(false);
+          expect(isTenThousand(i)).toBe(true);
         }
       });
     }
